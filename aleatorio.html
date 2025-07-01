@@ -4,26 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Perfil Aleatorio</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="estilos.css"/>
 </head>
 <body>
-  <div class="container">
-    <h1>Perfil Aleatorio - Grupo 4</h1>
-    
-    <button id="generate">🎲 Generar Perfil</button>
+  <h1 class="titulo">Perfil Aleatorio - Grupo 4</h1>
+  
+  <button id="generate" class="btn-grad">🎲 Generar Perfil</button>
 
-    <div id="profile-card" class="card hidden">
-      <img id="avatar" src="" alt="Avatar"/>
-      <h2 id="name"></h2>
-      <p><strong>País:</strong> <span id="country"></span></p>
-      <p><strong>Email:</strong> <span id="email"></span></p>
-      <button id="save">💾 Guardar Perfil</button>
+  <div class="profile-card-glass">
+    <div class="avatar-container">
+      <div id="avatar-bg" class="profile-avatar-bg">
+        <img id="avatar" class="profile-avatar" src="" alt="Avatar" style="display:none;"/>
+        <svg id="icono-avatar" class="icono-avatar" xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="none" viewBox="0 0 24 24">
+          <circle cx="12" cy="8" r="4" fill="#fff" stroke="#b0b8e6" stroke-width="2"/>
+          <path d="M4 20c0-4 4-7 8-7s8 3 8 7" stroke="#b0b8e6" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
     </div>
-
-    <h2>📋 Perfiles Guardados</h2>
-    <ul id="saved-profiles"></ul>
+    <div class="info-perfil">
+      <div class="dato dato-color">
+        <span class="label">🌎 País:</span>
+        <span id="country" class="valor"></span>
+      </div>
+      <div class="dato dato-color">
+        <span class="label">✉️ Email:</span>
+        <span id="email" class="valor email-link"></span>
+      </div>
+    </div>
+    <button id="save" class="btn-grad">💾 Guardar Perfil</button>
   </div>
 
+  <h2 class="subtitulo"><span class="icono-guardados">🗒️</span> Perfiles Guardados</h2>
+  <ul id="saved-profiles" class="lista-guardados"></ul>
+
   <script src="script.js"></script>
+  <script>
+  const fondos = [
+    "linear-gradient(135deg, #b0b8e6 0%, #eeceda 100%)",
+    "linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%)",
+    "linear-gradient(135deg, #f9d423 0%, #ff4e50 100%)",
+    "linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)",
+    "linear-gradient(135deg, #fbc2eb 0%, #fcb69f 100%)",
+    "linear-gradient(135deg, #f7971e 0%, #ffd200 100%)",
+    "linear-gradient(135deg, #43cea2 0%, #185a9d 100%)",
+    "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)"
+  ];
+
+  function cambiarFondo() {
+    const fondo = fondos[Math.floor(Math.random() * fondos.length)];
+    document.body.style.background = fondo;
+  }
+
+  setInterval(cambiarFondo, 4000); // Cambia cada 4 segundos
+  window.onload = cambiarFondo;
+  </script>
 </body>
 </html>
