@@ -1,1 +1,70 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
 
+.container {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+  text-align: center;
+  color: #333;
+}
+
+.boton-nuevo {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 25px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.boton-nuevo:hover {
+  background: #0056b3;
+}
+
+.perfil-tarjeta {
+  text-align: center;
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.perfil-tarjeta.hidden {
+  display: none;
+}
+
+.perfil-imagen {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+ul#saved-profiles {
+  list-style: none;
+  padding: 0;
+}
+
+ul#saved-profiles li {
+  background: #e9ecef;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
